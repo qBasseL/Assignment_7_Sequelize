@@ -16,7 +16,7 @@ const bootstrap = async () => {
     const status = error?.cause?.status ?? 500;
     res
       .status(status)
-      .json({ error, Message: error.message || "Somthing Went Wrong" });
+      .json({ Message: error.message || "Somthing Went Wrong" });
   });
 
   app.use("{/*dummy}", (req, res, next) => {
