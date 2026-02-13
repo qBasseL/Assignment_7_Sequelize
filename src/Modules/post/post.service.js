@@ -1,5 +1,4 @@
 import { PostModel, CommentModel, UserModel } from "../../DB/Models/index.js";
-import { fn } from "sequelize";
 import { sequelize } from "../../DB/db.connection.js";
 
 export const createPost = async (data) => {
