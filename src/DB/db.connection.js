@@ -8,8 +8,8 @@ import {
 } from "../../config/config.service.js";
 
 export const sequelize = new Sequelize(DB_NAME, DB_USER, DB_PASSWORD, {
-  DB_HOST,
-  DB_PORT,
+  host: DB_HOST,
+  port: DB_PORT,
   dialect: "mysql",
 });
 
@@ -19,6 +19,6 @@ export const authenticateDB = async () => {
     await sequelize.sync({alter: true});
     console.log(`Connected to database Successfully`);
   } catch (error) {
-    console.log(`Couldn't connect to database`);
+    console.error(`Couldn't connect to database`, error);
   }
 };
