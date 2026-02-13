@@ -14,7 +14,7 @@ export const createPost = async (data) => {
 };
 
 export const deletePost = async (data, userId) => {
-  // const {id} = userId
+  
   const post = await PostModel.findByPk(data);
 
   if (!post) {
